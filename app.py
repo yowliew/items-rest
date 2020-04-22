@@ -12,9 +12,6 @@ app.config["SQLALCHEMY_TRACK_MODIFICATION"] = False
 app.secret_key = "somesecret_key123"
 api = Api(app)
 
-@app.before_first_request
-def create_dbstruc():
-    db1.create_all()
 
 jwt = JWT(app, authenticate, identity)
 
